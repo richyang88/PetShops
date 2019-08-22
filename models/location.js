@@ -30,12 +30,16 @@ const mongoose = require('./connection.js')
 const locationSchema = new mongoose.Schema({
  state: String,
  city: String,
-//  hourStart: Number,
-//  hourEnd: Number
-},
-    {timestamps: {createdAt: 'Start Time'}
-    }
-    {timestamps: {updatedAt: 'End Time'}
+ hourStart: Number,
+ hourEnd: Number
+    // },
+    // {timestamps: {
+    //     createdAt: 'Start Time',
+    //     updatedAt: 'End Time'
+    //     }
+    // }
+    // {timestamps: {updateAt : 'End Time'
+    // }
     }
 )
 
@@ -55,7 +59,7 @@ function createLocation(){
         hourEnd: 9
     }; 
 }
-createLocation
+createLocation();
 
 function getAllLocations() {
   return locationCollection.find()

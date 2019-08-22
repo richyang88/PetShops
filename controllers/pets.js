@@ -48,49 +48,49 @@ petRouter.get('/listAll', (req, res) => {
 
 })
 
-issueRouter.get('/createPet', (req, res) => {
-  const createIssues = petApi.createIssues();
-  createIssues.then((newInDb)=>{
-    res.send(newInDb);
-  })
-})
+// issueRouter.get('/createPet', (req, res) => {
+//   const createIssues = petApi.createIssues();
+//   createIssues.then((newInDb)=>{
+//     res.send(newInDb);
+//   })
+// })
 
-issueRouter.get('/addPet', (req,res)=>{
-  issueApi.addOneIssue(req.params.issueId).then(()=>{
-    res.render('./issues/issueAddHBS', {})
-  })
-})
+// issueRouter.get('/addPet', (req,res)=>{
+//   issueApi.addOneIssue(req.params.issueId).then(()=>{
+//     res.render('./issues/issueAddHBS', {})
+//   })
+// })
 
-//issueID on 59 must match issueId on line 60
-issueRouter.get('/:issueId', (req,res)=>{
-  const issueById = issueApi.getOneIssue(req.params.issueId)
+// //issueID on 59 must match issueId on line 60
+// issueRouter.get('/:issueId', (req,res)=>{
+//   const issueById = issueApi.getOneIssue(req.params.issueId)
   
-  issueById.then((issueFromDb)=>{
-    console.log(issueFromDb)
-    res.render('issues/editIssueHBS', {issueFromDb: issueFromDb})
-  })
-})
+//   issueById.then((issueFromDb)=>{
+//     console.log(issueFromDb)
+//     res.render('issues/editIssueHBS', {issueFromDb: issueFromDb})
+//   })
+// })
 
 
-issueRouter.post('/post', (req,res)=>{
-  issueApi.addOneIssue(req.body).then((addOne)=>{
-    // res.send(addOne)
-    res.redirect('/listIssues')
-  })
-})
+// issueRouter.post('/post', (req,res)=>{
+//   issueApi.addOneIssue(req.body).then((addOne)=>{
+//     // res.send(addOne)
+//     res.redirect('/listIssues')
+//   })
+// })
 
-issueRouter.put('/:issueId', function(req,res){
-  issueApi.updateIssueById(req.params.issueId, req.body).then((update)=>{
-    res.redirect('/listIssues')
-  });
-})
+// issueRouter.put('/:issueId', function(req,res){
+//   issueApi.updateIssueById(req.params.issueId, req.body).then((update)=>{
+//     res.redirect('/listIssues')
+//   });
+// })
 
-issueRouter.delete('/:issueId', (req,res) =>{
-  issueApi.deleteIssueById(req.params.issueId).then((deleteThis)=>{
-    console.log(req.params.issueId)
-    res.redirect('/listIssues')
-  })
-})
+// issueRouter.delete('/:issueId', (req,res) =>{
+//   issueApi.deleteIssueById(req.params.issueId).then((deleteThis)=>{
+//     console.log(req.params.issueId)
+//     res.redirect('/listIssues')
+//   })
+// })
 
 
 
