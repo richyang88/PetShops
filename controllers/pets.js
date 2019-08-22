@@ -15,7 +15,8 @@ const express = require('express')
  * controller you need.
  * 
  */
-const petApi = require('../models/pets.js')
+const issueApi = require('../models/issues.js')
+// var helpers = require('handlebars-helpers')();
 
 /* Step 3 
  * 
@@ -25,23 +26,14 @@ const petApi = require('../models/pets.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const petRouter = express.Router()
+const issueRouter = express.Router()
 
 /* Step 4
  * 
  * TODO: Put all request handlers here
  */
+// issueRouter.get('/')
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-petRouter.get('/list', (req, res) => {
-  const allList = petApi.getAllPets();
-  allList.then(allPetsList)=>{
-    res.render('./')
-  }
-})
 
 issueRouter.get('/listIssues', (req, res) => {
   const allIssues = issueApi.getAllIssues()
@@ -50,11 +42,66 @@ issueRouter.get('/listIssues', (req, res) => {
   })
 })
 
+issueRouter.get('/listIssues/new', (req, res) => {
+  const createIssues = issueApi.createIssues();
+  createIssues.then((newInDb)=>{
+    res.send(newInDb);
+  })
+})
+
+issueRouter.get('/add', (req,res)=>{
+  issueApi.addOneIssue(req.params.issueId).then(()=>{
+    res.render('./issues/issueAddHBS', {})
+  })
+})
+
+//issueID on 59 must match issueId on line 60
+issueRouter.get('/:issueId', (req,res)=>{
+  const issueById = issueApi.getOneIssue(req.params.issueId)
+  
+  issueById.then((issueFromDb)=>{
+    console.log(issueFromDb)
+    res.render('issues/editIssueHBS', {issueFromDb: issueFromDb})
+  })
+})
+
+// issueRouter.get('/:index', function(req,res){
+//   singleShop = shopApi.getSingleShop(req.params.index)
+//   res.render('/issues/editIssueHBS', {singleShop, index: req.params.index})
+// })
+
+issueRouter.post('/post', (req,res)=>{
+  issueApi.addOneIssue(req.body).then((addOne)=>{
+    // res.send(addOne)
+    res.redirect('/listIssues')
+  })
+})
+
+issueRouter.put('/:issueId', function(req,res){
+  issueApi.updateIssueById(req.params.issueId, req.body).then((update)=>{
+    res.redirect('/listIssues')
+  });
+})
+
+issueRouter.delete('/:issueId', (req,res) =>{
+  issueApi.deleteIssueById(req.params.issueId).then((deleteThis)=>{
+    console.log(req.params.issueId)
+    res.redirect('/listIssues')
+  })
+})
+
+// shopRouter.delete('/:index', function(req,res){
+//   console.log('req.param.index', req.params.index)
+//   shopApi.deleteShop(req.params.index);
+// })
+
+
+
 /* Step 6
  *
  * Export the router from the file.
  *
  */
 module.exports = {
-  petRouter
+  issueRouter
 }

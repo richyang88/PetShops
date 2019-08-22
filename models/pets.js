@@ -42,11 +42,7 @@ const petSchema = new mongoose.Schema({
  */
 const petCollection = mongoose.model('Pet', petSchema)
 
-/* Step 4
- *
- * TODO: delete this it's just a sample
- *
- */
+
 function getAllPets() {
   return petCollection.find()
 }
