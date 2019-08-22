@@ -30,9 +30,14 @@ const mongoose = require('./connection.js')
 const locationSchema = new mongoose.Schema({
  state: String,
  city: String,
- hourStart: Number,
- hourEnd: Number
-})
+//  hourStart: Number,
+//  hourEnd: Number
+},
+    {timestamps: {createdAt: 'Start Time'}
+    }
+    {timestamps: {updatedAt: 'End Time'}
+    }
+)
 
 /* Step 3
  *
@@ -40,8 +45,17 @@ const locationSchema = new mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const locationCollection = mongoose.model('Pet', locationSchema)
+const locationCollection = mongoose.model('Location', locationSchema)
 
+function createLocation(){
+    return{
+        state: "Georgia",
+        city: "Atlanta",
+        hourStart: 11,
+        hourEnd: 9
+    }; 
+}
+createLocation
 
 function getAllLocations() {
   return locationCollection.find()
@@ -69,6 +83,7 @@ function deleteLocationInfoById(id){
  * object
  */
 module.exports = {
+    createLocation,
   getAllLocations,
   getOneLocation,
   addOneLocation,

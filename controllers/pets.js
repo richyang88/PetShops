@@ -16,6 +16,7 @@ const express = require('express')
  * 
  */
 const petApi = require('../models/pets.js')
+const locationApi = require('../models/location.js')
 // var helpers = require('handlebars-helpers')();
 
 /* Step 3 
@@ -36,10 +37,15 @@ const petRouter = express.Router()
 
 
 petRouter.get('/listAll', (req, res) => {
-  const allPets = petApi.getAllPets()
+  const allPets = petApi.getAllPets();
+  const allLocal = locationApi.getAllLocations();
   allPets.then((petInDbObj)=>{
     res.render('./petShop/allPetHBS', {petInDbObj});
+  });
+  allLocal.then((locationsInDbObj)=>{
+    res.render('./petShop/allPetHBS', {locationsInDbObj});
   })
+
 })
 
 issueRouter.get('/createPet', (req, res) => {
@@ -65,10 +71,6 @@ issueRouter.get('/:issueId', (req,res)=>{
   })
 })
 
-// issueRouter.get('/:index', function(req,res){
-//   singleShop = shopApi.getSingleShop(req.params.index)
-//   res.render('/issues/editIssueHBS', {singleShop, index: req.params.index})
-// })
 
 issueRouter.post('/post', (req,res)=>{
   issueApi.addOneIssue(req.body).then((addOne)=>{
@@ -90,10 +92,6 @@ issueRouter.delete('/:issueId', (req,res) =>{
   })
 })
 
-// shopRouter.delete('/:index', function(req,res){
-//   console.log('req.param.index', req.params.index)
-//   shopApi.deleteShop(req.params.index);
-// })
 
 
 
