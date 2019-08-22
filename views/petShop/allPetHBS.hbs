@@ -1,12 +1,13 @@
 
 <h1>Your Issues</h1>
 
-<a href="/add">Click here to Create New Issue</a>
+<a href="/add">Click here to Add New Item</a>
 
 <ol>
-    {{#each issuesInDb}}
+    {{#each petInDbObj}}
     <li>
         <a href ="/{{_id}}">{{name}}</a>
+        <a href ="/{{_id}}">{{hourStart}}</a>
     </li>
     {{/each}}
 </ol>

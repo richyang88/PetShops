@@ -42,9 +42,9 @@ petRouter.get('/listAll', (req, res) => {
   allPets.then((petInDbObj)=>{
     res.render('./petShop/allPetHBS', {petInDbObj});
   });
-  allLocal.then((locationsInDbObj)=>{
-    res.render('./petShop/allPetHBS', {locationsInDbObj});
-  })
+  // allLocal.then((locationsInDbObj)=>{
+  //   res.render('./petShop/allPetHBS', {locationsInDbObj});
+  // })
 
 })
 
@@ -101,5 +101,5 @@ petRouter.get('/listAll', (req, res) => {
  *
  */
 module.exports = {
-  issueRouter
+  petRouter
 }
