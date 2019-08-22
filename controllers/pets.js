@@ -39,12 +39,14 @@ const petRouter = express.Router()
 petRouter.get('/listAll', (req, res) => {
   const allPets = petApi.getAllPets();
   const allLocal = locationApi.getAllLocations();
-  allPets.then((petInDbObj)=>{
-    res.render('./petShop/allPetHBS', {petInDbObj});
+  allPets.then((petInDbObj) => {
+    allLocal.then((locationsInDbObj) => {
+      res.render('./petShop/allPetHBS', { locationsInDbObj, petInDbObj });
+    })
   });
   // allLocal.then((locationsInDbObj)=>{
   //   res.render('./petShop/allPetHBS', {locationsInDbObj});
-  // })
+  // });
 
 })
 
@@ -64,7 +66,7 @@ petRouter.get('/listAll', (req, res) => {
 // //issueID on 59 must match issueId on line 60
 // issueRouter.get('/:issueId', (req,res)=>{
 //   const issueById = issueApi.getOneIssue(req.params.issueId)
-  
+
 //   issueById.then((issueFromDb)=>{
 //     console.log(issueFromDb)
 //     res.render('issues/editIssueHBS', {issueFromDb: issueFromDb})

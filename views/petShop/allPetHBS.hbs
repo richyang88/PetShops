@@ -2,11 +2,20 @@
 <h1>Your Issues</h1>
 
 <a href="/add">Click here to Add New Item</a>
-
+<div> Pets</div>
 <ol>
     {{#each petInDbObj}}
     <li>
-        <a href ="/{{_id}}">{{name}}</a>
+        <a href ="/{{_id}}">Name: {{name}}</a>
+        <a href ="/{{_id}}">Type: {{type}}</a>
+    </li>
+    {{/each}}
+</ol>
+
+<div> Shops</div>
+<ol>
+    {{#each locationsInDbObj}}
+    <li>
         <a href ="/{{_id}}">{{hourStart}}</a>
     </li>
     {{/each}}

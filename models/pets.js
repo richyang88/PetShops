@@ -42,17 +42,16 @@ const petSchema = new mongoose.Schema({
  */
 const petCollection = mongoose.model('Pet', petSchema)
 
-function createPet() {
-  return{
-    name: "Fido",
-    type: "Dog",
-    age: 2,
-    gender: "Male",
-    status: "Available"
-   }; 
-}
+// function createPet() {
+//   return petCollection.create({
+//     name: "Fido",
+//     type: "Dog",
+//     age: 2,
+//     gender: "Male",
+//     status: "Available"
+//    }); 
+// }
 
-createPet()
 
 
 function getAllPets() {
@@ -81,7 +80,7 @@ function deletePetInfoById(id){
  * object
  */
 module.exports = {
-  createPet,
+  // createPet,
   getAllPets,
   getOnePet,
   addOnePet,
