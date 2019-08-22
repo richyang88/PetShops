@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const issueApi = require('../models/issues.js')
+const petApi = require('../models/pets.js')
 // var helpers = require('handlebars-helpers')();
 
 /* Step 3 
@@ -26,7 +26,7 @@ const issueApi = require('../models/issues.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const issueRouter = express.Router()
+const petRouter = express.Router()
 
 /* Step 4
  * 
@@ -35,21 +35,21 @@ const issueRouter = express.Router()
 // issueRouter.get('/')
 
 
-issueRouter.get('/listIssues', (req, res) => {
-  const allIssues = issueApi.getAllIssues()
-  allIssues.then((issuesInDb)=>{
-    res.render('./issues/issuesHBS', {issuesInDb});
+petRouter.get('/listAll', (req, res) => {
+  const allPets = petApi.getAllPets()
+  allPets.then((petInDbObj)=>{
+    res.render('./petShop/allPetHBS', {petInDbObj});
   })
 })
 
-issueRouter.get('/listIssues/new', (req, res) => {
-  const createIssues = issueApi.createIssues();
+issueRouter.get('/createPet', (req, res) => {
+  const createIssues = petApi.createIssues();
   createIssues.then((newInDb)=>{
     res.send(newInDb);
   })
 })
 
-issueRouter.get('/add', (req,res)=>{
+issueRouter.get('/addPet', (req,res)=>{
   issueApi.addOneIssue(req.params.issueId).then(()=>{
     res.render('./issues/issueAddHBS', {})
   })

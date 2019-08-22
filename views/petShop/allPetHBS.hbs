@@ -1,0 +1,12 @@
+
+<h1>Your Issues</h1>
+
+<a href="/add">Click here to Create New Issue</a>
+
+<ol>
+    {{#each issuesInDb}}
+    <li>
+        <a href ="/{{_id}}">{{name}}</a>
+    </li>
+    {{/each}}
+</ol>

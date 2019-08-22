@@ -26,12 +26,12 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const petSchema = new mongoose.Schema({
- name: String,
- type: String,
- age: Number,
- gender: String,
- status: String
+
+const locationSchema = new mongoose.Schema({
+ state: String,
+ city: String,
+ hourStart: Number,
+ hourEnd: Number
 })
 
 /* Step 3
@@ -40,39 +40,27 @@ const petSchema = new mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const petCollection = mongoose.model('Pet', petSchema)
+const locationCollection = mongoose.model('Pet', locationSchema)
 
-function createPet() {
-  return{
-    name: "Fido",
-    type: "Dog",
-    age: 2,
-    gender: "Male",
-    status: "Available"
-   }; 
+
+function getAllLocations() {
+  return locationCollection.find()
 }
 
-createPet()
-
-
-function getAllPets() {
-  return petCollection.find()
+function getOneLocation(id){
+  return locationCollection.findById(id)
 }
 
-function getOnePet(id){
-  return petCollection.findById(id)
+function addOneLocation(newPet){
+  return locationCollection.create(newPet)
 }
 
-function addOnePet(newPet){
-  return petCollection.create(newPet)
+function updateLocation(id, petInfo){
+  return locationCollection.findByIdAndUpdate(id, petInfo)
 }
 
-function updatePet(id, petInfo){
-  return petCollection.findByIdAndUpdate(id, petInfo)
-}
-
-function deletePetInfoById(id){
-  return issueCollection.findByIdAndDelete(id)
+function deleteLocationInfoById(id){
+  return locationCollection.findByIdAndDelete(id)
 }
 
 /* Step 5
@@ -81,10 +69,9 @@ function deletePetInfoById(id){
  * object
  */
 module.exports = {
-  createPet,
-  getAllPets,
-  getOnePet,
-  addOnePet,
-  updatePet,
-  deletePetInfoById
+  getAllLocations,
+  getOneLocation,
+  addOneLocation,
+  updateLocation,
+  deleteLocationInfoById
 }
