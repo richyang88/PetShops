@@ -44,10 +44,6 @@ petRouter.get('/listAll', (req, res) => {
       res.render('./petShop/allPetHBS', { locationsInDbObj, petInDbObj });
     })
   });
-  // allLocal.then((locationsInDbObj)=>{
-  //   res.render('./petShop/allPetHBS', {locationsInDbObj});
-  // });
-
 })
 
 // issueRouter.get('/createPet', (req, res) => {
