@@ -34,7 +34,7 @@ const petRouter = express.Router()
  * 
  * TODO: Put all request handlers here
  */
-// issueRouter.get('/')
+// petRouter.get('/')
 
 
 petRouter.get('/listAll', (req, res) => {
@@ -52,47 +52,47 @@ petRouter.get('/listAll', (req, res) => {
   });//passing in pets.js
 })
 
-// issueRouter.get('/createPet', (req, res) => {
-//   const createIssues = petApi.createIssues();
-//   createIssues.then((newInDb)=>{
+// petRouter.get('/createPet', (req, res) => {
+//   const createpets = petApi.createPet();
+//   createpets.then((newInDb)=>{
 //     res.send(newInDb);
 //   })
 // })
 
-// issueRouter.get('/addPet', (req,res)=>{
-//   issueApi.addOneIssue(req.params.issueId).then(()=>{
-//     res.render('./issues/issueAddHBS', {})
+// petRouter.get('/addPet', (req,res)=>{
+//   petApi.addOnepet(req.params.petId).then(()=>{
+//     res.render('./pets/petAddHBS', {})
 //   })
 // })
 
-// //issueID on 59 must match issueId on line 60
-// issueRouter.get('/:issueId', (req,res)=>{
-//   const issueById = issueApi.getOneIssue(req.params.issueId)
+// //petID on 59 must match petId on line 60
+// petRouter.get('/:petId', (req,res)=>{
+//   const petById = petApi.getOnepet(req.params.petId)
 
-//   issueById.then((issueFromDb)=>{
-//     console.log(issueFromDb)
-//     res.render('issues/editIssueHBS', {issueFromDb: issueFromDb})
+//   petById.then((petFromDb)=>{
+//     console.log(petFromDb)
+//     res.render('pets/editpetHBS', {petFromDb: petFromDb})
 //   })
 // })
 
 
-// issueRouter.post('/post', (req,res)=>{
-//   issueApi.addOneIssue(req.body).then((addOne)=>{
+// petRouter.post('/post', (req,res)=>{
+//   petApi.addOnepet(req.body).then((addOne)=>{
 //     // res.send(addOne)
-//     res.redirect('/listIssues')
+//     res.redirect('/listpets')
 //   })
 // })
 
-// issueRouter.put('/:issueId', function(req,res){
-//   issueApi.updateIssueById(req.params.issueId, req.body).then((update)=>{
-//     res.redirect('/listIssues')
+// petRouter.put('/:petId', function(req,res){
+//   petApi.updatepetById(req.params.petId, req.body).then((update)=>{
+//     res.redirect('/listpets')
 //   });
 // })
 
-// issueRouter.delete('/:issueId', (req,res) =>{
-//   issueApi.deleteIssueById(req.params.issueId).then((deleteThis)=>{
-//     console.log(req.params.issueId)
-//     res.redirect('/listIssues')
+// petRouter.delete('/:petId', (req,res) =>{
+//   petApi.deletepetById(req.params.petId).then((deleteThis)=>{
+//     console.log(req.params.petId)
+//     res.redirect('/listpets')
 //   })
 // })
 

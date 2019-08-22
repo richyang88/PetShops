@@ -85,5 +85,6 @@ module.exports = {
   getOnePet,
   addOnePet,
   updatePet,
-  deletePetInfoById
+  deletePetInfoById,
+  petSchema
 }

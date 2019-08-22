@@ -10,7 +10,8 @@
  *
  */
 const mongoose = require('./connection.js')
-
+const petApi = require('./pets.js')
+// const {petSchema} = require('./pets.js')
 /* Step 1 alternative
  *
  * TODO: make a global variable to act as an in memory database. 
@@ -31,7 +32,8 @@ const locationSchema = new mongoose.Schema({
     state: String,
     city: String,
     hourStart: Number,
-    hourEnd: Number
+    hourEnd: Number,
+    pets:[petApi.petSchema]
         // },
         // {timestamps: {
         //     createdAt: 'Start_Time',
@@ -41,6 +43,7 @@ const locationSchema = new mongoose.Schema({
         // {timestamps: {updateAt : 'End Time'
         // }
     }
+    
 )
 
 /* Step 3
