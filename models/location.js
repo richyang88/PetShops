@@ -28,18 +28,18 @@ const mongoose = require('./connection.js')
  */
 
 const locationSchema = new mongoose.Schema({
- state: String,
- city: String,
- hourStart: Number,
- hourEnd: Number
-    // },
-    // {timestamps: {
-    //     createdAt: 'Start Time',
-    //     updatedAt: 'End Time'
-    //     }
-    // }
-    // {timestamps: {updateAt : 'End Time'
-    // }
+    state: String,
+    city: String,
+    hourStart: Number,
+    hourEnd: Number
+        // },
+        // {timestamps: {
+        //     createdAt: 'Start_Time',
+        //     updatedAt: 'End Time'
+        //     }
+        // }
+        // {timestamps: {updateAt : 'End Time'
+        // }
     }
 )
 
@@ -51,14 +51,14 @@ const locationSchema = new mongoose.Schema({
  */
 const locationCollection = mongoose.model('Location', locationSchema)
 
-function createLocation(){
-    return locationCollection.create({
-        state: "Georgia",
-        city: "Atlanta",
-        hourStart: 11,
-        hourEnd: 9
-    }); 
-}
+// function createLocation(){
+//     return locationCollection.create({
+//         state: "Georgia",
+//         city: "Atlanta",
+//         hourStart: 12,
+//         hourEnd: 9
+//     }); 
+// }
 
 function getAllLocations() {
   return locationCollection.find()
@@ -86,7 +86,7 @@ function deleteLocationInfoById(id){
  * object
  */
 module.exports = {
-  createLocation,
+//   createLocation,
   getAllLocations,
   getOneLocation,
   addOneLocation,

@@ -8,6 +8,9 @@
     <li>
         <a href ="/{{_id}}">Name: {{name}}</a>
         <a href ="/{{_id}}">Type: {{type}}</a>
+        <a href ="/{{_id}}">Age: {{age}} Years</a>
+        <a href ="/{{_id}}">Gender: {{gender}}</a>
+        <a href ="/{{_id}}">Status: {{status}}</a>
     </li>
     {{/each}}
 </ol>
@@ -16,7 +19,10 @@
 <ol>
     {{#each locationsInDbObj}}
     <li>
-        <a href ="/{{_id}}">{{hourStart}}</a>
+        <a href ="/{{_id}}">State: {{state}}</a>
+        <a href ="/{{_id}}">City: {{city}}</a>
+        <a href ="/{{_id}}">Hour Start: {{hourStart}}</a>
+        <a href ="/{{_id}}">Hour End: {{hourEnd}}</a>
     </li>
     {{/each}}
 </ol>
