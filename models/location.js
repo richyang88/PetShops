@@ -68,12 +68,12 @@ function getOneLocation(id){
   return locationCollection.findById(id)
 }
 
-function addOneLocation(newPet){
+function addOneLocation(newLocation){
   return locationCollection.create(newPet)
 }
 
-function updateLocation(id, petInfo){
-  return locationCollection.findByIdAndUpdate(id, petInfo)
+function updateLocation(id, locationInfo){
+  return locationCollection.findByIdAndUpdate(id, locationInfo)
 }
 
 function deleteLocationInfoById(id){

@@ -26,3 +26,14 @@
     </li>
     {{/each}}
 </ol>
+
+<div> Sales</div>
+<ol>
+    {{#each salesInDbObj}}
+    <li>
+        <a href ="/{{_id}}">Month: {{month}}</a>
+        <a href ="/{{_id}}">Year: {{year}}</a>
+        <a href ="/{{_id}}">Sales: {{amount}}</a>
+    </li>
+    {{/each}}
+</ol>

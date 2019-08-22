@@ -17,6 +17,7 @@ const express = require('express')
  */
 const petApi = require('../models/pets.js')
 const locationApi = require('../models/location.js')
+const salesApi = require('../models/sales.js')
 // var helpers = require('handlebars-helpers')();
 
 /* Step 3 
@@ -39,11 +40,16 @@ const petRouter = express.Router()
 petRouter.get('/listAll', (req, res) => {
   const allPets = petApi.getAllPets();
   const allLocal = locationApi.getAllLocations();
+  const allSales = salesApi.getAllSales();
   allPets.then((petInDbObj) => {
     allLocal.then((locationsInDbObj) => {
-      res.render('./petShop/allPetHBS', { locationsInDbObj, petInDbObj });
-    })
-  });
+      allSales.then((salesInDbObj)=>{
+        // console.log(locationsInDbObj)
+        // console.log(salesInDbObj)
+        res.render('./petShop/allPetHBS', { petInDbObj, locationsInDbObj, salesInDbObj });
+      }) //passing in sales.js
+    })//passing in location.js
+  });//passing in pets.js
 })
 
 // issueRouter.get('/createPet', (req, res) => {
