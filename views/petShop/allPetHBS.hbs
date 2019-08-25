@@ -23,7 +23,15 @@
         <a href ="/{{_id}}">City: {{city}}</a>
         <a href ="/{{_id}}">Hour Start: {{hourStart}}</a>
         <a href ="/{{_id}}">Hour End: {{hourEnd}}</a>
-        <a href ="/{{_id}}">Pets Here: {{pets}}</a>
+        {{!-- <ol> --}}
+        Pets Here Today: {{#each pets}}
+            {{!-- <li> test --}}
+                    {{_id}} 
+            {{!-- </li> --}}
+                    {{/each}}
+        {{!-- </ol> --}}
+        
+        
     </li>
     {{/each}}
 </ol>

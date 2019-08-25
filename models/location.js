@@ -54,14 +54,17 @@ const locationSchema = new mongoose.Schema({
  */
 const locationCollection = mongoose.model('Location', locationSchema)
 
-// function createLocation(){
-//     return locationCollection.create({
-//         state: "Georgia",
-//         city: "Atlanta",
-//         hourStart: 12,
-//         hourEnd: 9
-//     }); 
-// }
+function createLocation(){
+    return locationCollection.create({
+        state: "Texas",
+        city: "Houston",
+        hourStart: 12,
+        hourEnd: 9,
+        pets:[petApi.petSchema]
+    }); 
+}
+
+createLocation();
 
 function getAllLocations() {
   return locationCollection.find()
@@ -89,7 +92,7 @@ function deleteLocationInfoById(id){
  * object
  */
 module.exports = {
-//   createLocation,
+  createLocation,
   getAllLocations,
   getOneLocation,
   addOneLocation,
