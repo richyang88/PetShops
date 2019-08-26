@@ -60,8 +60,8 @@ petRouter.get('/listAll', (req, res) => {
 // })
 
 petRouter.get('/addPet', (req,res)=>{
-  petApi.addOnePet(req.params.petId).then(()=>{
-    res.render('./petShop/createPetHBS', {})
+  petApi.addOnePet(req.params.petId).then((petInDbObj)=>{
+    res.render('./petShop/createPetHBS', {petInDbObj})
   })
 })
 

@@ -55,18 +55,18 @@ const locationSchema = mongoose.Schema({
  */
 const locationCollection = mongoose.model('Location', locationSchema)
 
-function createLocation(){
-    return locationCollection.create({
-        state: "Texas",
-        city: "Houston",
-        hourStart: 12,
-        hourEnd: 9,
-        // shopId: mongoose.Types.ObjectId()
-        // pets:[petApi.petSchema]
-    }); 
-}
+// function createLocation(){
+//     return locationCollection.create({
+//         state: "Texas",
+//         city: "Houston",
+//         hourStart: 12,
+//         hourEnd: 9,
+//         // shopId: mongoose.Types.ObjectId()
+//         // pets:[petApi.petSchema]
+//     }); 
+// }
 
-createLocation();
+// createLocation();
 
 function getAllLocations() {
   return locationCollection.find()
@@ -94,7 +94,7 @@ function deleteLocationInfoById(id){
  * object
  */
 module.exports = {
-  createLocation,
+//   createLocation,
   getAllLocations,
   getOneLocation,
   addOneLocation,

@@ -9,30 +9,25 @@
   <input type="text"placeholder="name" name="name" />
 
   <label for="type">Pet Type</label>
-    <select>
+    {{!-- <select>
+      {{#each petInDbObj}}
         <option value="Cat">Cat</option>
         <option value="Dog">Dog</option>
         <option value="Fish">Fish</option>
         <option value="Other">Other</option>
-        
-        {{!-- <input type="text" name="type" /> --}}
-      </select>
+        {{/each}} --}}
+        <input type="text" name="type" placeholder="Cat/Dog/Fish/Other"/>
+      {{!-- </select> --}}
   
 
   <label for="age">Age in Years</label>
   <input type="number" name="age" />
 
   <label for="gender">Gender</label>
-  <select>
-    <option value ="male">Male</option>
-    <option value ="female">Female</option>
-  </select>
+  <input type="text" name="gender" placeholder="Male/Female"/>
 
   <label for="status">Status</label>
-    <select>
-      <option value ="adoptable">Adoptable</option>
-      <option value ="homed">Home'd</option>
-    </select>
+  <input type="text" name="status" placeholder="Adopted/Available" />
 
 
   <input type ="submit" name="submit" value="Add Pet" />
