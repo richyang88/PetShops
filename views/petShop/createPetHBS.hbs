@@ -14,17 +14,24 @@
         <option value="Dog">Dog</option>
         <option value="Fish">Fish</option>
         <option value="Other">Other</option>
+        {{!-- <input type="text" name="type" /> --}}
       </select>
-  {{!-- <input type="text" name="type" /> --}}
+  
 
   <label for="age">Age in Years</label>
   <input type="number" name="age" />
 
   <label for="gender">Gender</label>
-  <input type="string" name="gender" />
+  <select>
+    <option value ="male">Male</option>
+    <option value ="female">Female</option>
+  </select>
 
   <label for="status">Status</label>
-  <input type="string" name="status" />
+    <select>
+      <option value ="adoptable">Adoptable</option>
+      <option value ="homed">Home'd</option>
+    </select>
 
 
   <input type ="submit" name="submit" value="Add Pet" />
