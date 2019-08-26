@@ -61,7 +61,7 @@ petRouter.get('/listAll', (req, res) => {
 
 petRouter.get('/addPet', (req,res)=>{
   petApi.addOnepet(req.params.petId).then(()=>{
-    res.render('./pets/petAddHBS', {})
+    res.render('./pets/createPetHBS', {})
   })
 })
 

@@ -1,12 +1,29 @@
-<form method="POST" action="/<TODO: models url here (e.g: /accounts)>">
+<form method="POST" action="/post">
 
   <!--
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
-  <input type="text" value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" />
+ <h1>Add a new Pet Issue</h1>
+  <label for="name">Pet Name</label>
+  <input type="text"placeholder="name" name="name" />
 
-  <input type="checkbox" name="<TODO: model.booleanMember (e.g: account.isActive)" value="true" />
+  <label for="type">Pet Type</label>
+  <input type="date" name="type" />
 
-  <input type="submit" value="Create Shop" />
+  <label for="age">Age in Years</label>
+  <input type="number" name="age" />
+
+  <label for="gender">Gender</label>
+  <input type="string" name="gender" />
+
+  <label for="status">Status</label>
+  <input type="string" name="status" />
+
+
+  <input type ="submit" name="submit" value="Create Issue" />
+</form>
+
+<form method="GET" action ="/listIssues">
+  <input type ="submit" name ="homeBtn" value="Home" />
 </form>
