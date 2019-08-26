@@ -104,7 +104,7 @@ petRouter.get('/sale/:saleId', (req,res)=>{
 
 
 //post for pets
-petRouter.post('/post', (req,res)=>{
+petRouter.post('/pet/post', (req,res)=>{
   petApi.addOnePet(req.body).then((addOne)=>{
     res.redirect('/listAll')
   })
@@ -117,8 +117,15 @@ petRouter.post('/shop/post', (req,res)=>{
   })
 })
 
+//post for Sale
+petRouter.post('/sale/post', (req,res)=>{
+  salesApi.addOneSale(req.body).then((addOne)=>{
+    res.redirect('/listAll')
+  })
+})
+
 //update for pets
-petRouter.put('/:petId', function(req,res){
+petRouter.put('/pet/:petId', function(req,res){
   petApi.updatePet(req.params.petId, req.body).then((update)=>{
     res.redirect('/listAll')
   });
@@ -127,6 +134,13 @@ petRouter.put('/:petId', function(req,res){
 //update for shop
 petRouter.put('/shop/:shopId', function(req,res){
   locationApi.updateLocation(req.params.shopId, req.body).then((update)=>{
+    res.redirect('/listAll')
+  });
+})
+
+//update for sale
+petRouter.put('/sale/:saleId', function(req,res){
+  salesApi.updateSale(req.params.shopId, req.body).then((update)=>{
     res.redirect('/listAll')
   });
 })
@@ -143,6 +157,14 @@ petRouter.delete('/pet/:petId', (req,res) =>{
 petRouter.delete('/shop/:shopId', (req,res) =>{
   locationApi.deleteLocationInfoById(req.params.shopId).then((deleteThis)=>{
     console.log(req.params.shopId)
+    res.redirect('/listAll')
+  })
+})
+
+//delete for sale
+petRouter.delete('/sale/:saleId', (req,res) =>{
+  salesApi.deleteSaleInfoById(req.params.saleId).then((deleteThis)=>{
+    console.log(req.params.saleId)
     res.redirect('/listAll')
   })
 })

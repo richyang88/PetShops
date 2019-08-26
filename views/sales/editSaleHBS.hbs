@@ -1,0 +1,28 @@
+<form method="POST" action="/sale/{{saleFromDb._id}}?_method=PUT">
+
+  <!--
+    Template for creating input form for a string object key called stringMember
+    NOTE: for numeric input fields use `type="number"`
+  --->
+ <h1>Add a new Sale Report</h1>
+  <label for="month">Month</label>
+  <input type="text"name="month" value="{{saleFromDb.month}}"/>
+
+  <label for="year">State</label>
+    <input type="text" name="year" value="{{saleFromDb.year}}"/>
+      
+  <label for="amount">Amount</label>
+  <input type="number" name="amount" value="{{saleFromDb.amount}}" />
+
+
+  <input type ="submit" name="submit" value="Edit Sale" />
+</form>
+
+{{!-- Remove Pet from List --}}
+<form method="POST" action ="/sale/{{saleFromDb._id}}?_method=DELETE">
+<input type ="submit" name ="deleteBtn" value ="Delete">
+</form>
+
+<form method="GET" action ="/listAll">
+  <input type ="submit" name ="homeBtn" value="Home" />
+</form>
