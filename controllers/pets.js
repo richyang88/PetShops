@@ -66,14 +66,14 @@ petRouter.get('/addPet', (req,res)=>{
 })
 
 // //petID on 59 must match petId on line 60
-// petRouter.get('/:petId', (req,res)=>{
-//   const petById = petApi.getOnepet(req.params.petId)
+petRouter.get('/:petId', (req,res)=>{
+  const petById = petApi.getOnePet(req.params.petId)
 
-//   petById.then((petFromDb)=>{
-//     console.log(petFromDb)
-//     res.render('pets/editpetHBS', {petFromDb: petFromDb})
-//   })
-// })
+  petById.then((petFromDb)=>{
+    console.log(petFromDb)
+    res.render('petShop/editPetHBS', {petFromDb: petFromDb})
+  })
+})
 
 
 petRouter.post('/post', (req,res)=>{
@@ -83,15 +83,15 @@ petRouter.post('/post', (req,res)=>{
 })
 
 petRouter.put('/:petId', function(req,res){
-  petApi.updatepetById(req.params.petId, req.body).then((update)=>{
-    res.redirect('/listpets')
+  petApi.updatePet(req.params.petId, req.body).then((update)=>{
+    res.redirect('/listAll')
   });
 })
 
 // petRouter.delete('/:petId', (req,res) =>{
-//   petApi.deletepetById(req.params.petId).then((deleteThis)=>{
+//   petApi.deletePetById(req.params.petId).then((deleteThis)=>{
 //     console.log(req.params.petId)
-//     res.redirect('/listpets')
+//     res.redirect('/listAll')
 //   })
 // })
 

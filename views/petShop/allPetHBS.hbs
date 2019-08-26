@@ -1,51 +1,56 @@
 
 <h1>Riley's Animal World!</h1>
+<div class="containerBg"> 
+    <div class="petListCont">
+        <a href="/addPet">Click here to Add New Pet!</a>
+        <div> Pets</div>
+        <ol>
+            {{#each petInDbObj}}
+            <li>
+                <a href ="/{{_id}}">Name: {{name}}</a>
+                <p>Type: {{type}}</p>
+                <p>Age: {{age}} Years</p>
+                <p>Gender: {{gender}}</p>
+                <p>Status: {{status}}</p>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
 
-<a href="/addPet">Click here to Add New Pet!</a>
-<div> Pets</div>
-<ol>
-    {{#each petInDbObj}}
-    <li>
-        <a href ="/{{_id}}">Name: {{name}}</a>
-        <a href ="/{{_id}}">Type: {{type}}</a>
-        <a href ="/{{_id}}">Age: {{age}} Years</a>
-        <a href ="/{{_id}}">Gender: {{gender}}</a>
-        <a href ="/{{_id}}">Status: {{status}}</a>
-    </li>
-    {{/each}}
-</ol>
+    <div class="shopListCont">
+        <a href="/addStore">Click here to Add New Stores!</a>
+        <div> Shops</div>
+        <ol>
+            {{#each locationsInDbObj}}
+            <li>
+                <a href ="/{{_id}}">State: {{state}}</a>
+                <a href ="/{{_id}}">City: {{city}}</a>
+                <a href ="/{{_id}}">Hour Start: {{hourStart}}</a>
+                <a href ="/{{_id}}">Hour End: {{hourEnd}}</a>
+                {{!-- <ol> --}}
+                {{!-- Pets Here Today: {{#each pets}} --}}
+                    {{!-- <li> test --}}
+                            {{!-- {{_id}}  --}}
+                    {{!-- </li> --}}
+                            {{!-- {{/each}} --}}
+                {{!-- </ol>  --}}
+                            
+            </li>
+            {{/each}}
+        </ol>
+    </div>
 
-<a href="/addStore">Click here to Add New Stores!</a>
-<div> Shops</div>
-<ol>
-    {{#each locationsInDbObj}}
-    <li>
-        <a href ="/{{_id}}">State: {{state}}</a>
-        <a href ="/{{_id}}">City: {{city}}</a>
-        <a href ="/{{_id}}">Hour Start: {{hourStart}}</a>
-        <a href ="/{{_id}}">Hour End: {{hourEnd}}</a>
-        {{!-- <ol> --}}
-        {{!-- Pets Here Today: {{#each pets}} --}}
-            {{!-- <li> test --}}
-                    {{!-- {{_id}}  --}}
-            {{!-- </li> --}}
-                    {{!-- {{/each}} --}}
-        {{!-- </ol>  --}}
-        
-        
-    </li>
-    {{/each}}
-</ol>
-
-
-<a href="/addSale">Click here to Add New Sales</a>
-<div> Sales</div>
-<ol>
-    {{#each salesInDbObj}}
-    <li>
-        <a href ="/{{_id}}">Month: {{month}}</a>
-        <a href ="/{{_id}}">Year: {{year}}</a>
-        <a href ="/{{_id}}">Sales: {{amount}}</a>
-    </li>
-    {{/each}}
-</ol>
+    <div class="saleListCont">
+        <a href="/addSale">Click here to Add New Sales</a>
+        <div> Sales</div>
+        <ol>
+            {{#each salesInDbObj}}
+            <li>
+                <a href ="/{{_id}}">Month: {{month}}</a>
+                <a href ="/{{_id}}">Year: {{year}}</a>
+                <a href ="/{{_id}}">Sales: {{amount}}</a>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</div>

@@ -1,25 +1,25 @@
-<form method="POST" action="//{{issueFromDb._id}}?_method=PUT">
+<form method="POST" action="/{{petFromDb._id}}?_method=PUT">
 
   <!--
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
- <h1>Add a new Pet Issue</h1>
+ <h1> Edit a Pet </h1>
   <label for="name">Pet Name</label>
-  <input type="text"placeholder="name" name="name" />
+  <input type="text"name="name" value="{{petFromDb.name}}" />
 
   <label for="type">Pet Type</label>
-    <input type="text" name="type" placeholder="Cat/Dog/Fish/Other"/>
+    <input type="text" name="type" value="{{petFromDb.type}}" />
   
 
   <label for="age">Age in Years</label>
-    <input type="number" name="age" />
+    <input type="number" name="age" value="{{petFromDb.age}}" />
 
   <label for="gender">Gender</label>
-    <input type="text" name="gender" placeholder="Male/Female"/>
+    <input type="text" name="gender" value="{{petFromDb.gender}}" />
 
   <label for="status">Status</label>
-   <input type="text" name="status" placeholder="Adopted/Available" />
+   <input type="text" name="status" value="{{petFromDb.status}}" />
 
 
   <input type ="submit" name="submit" value="Edit Pet" />
