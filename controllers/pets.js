@@ -76,12 +76,11 @@ petRouter.get('/addPet', (req,res)=>{
 // })
 
 
-// petRouter.post('/post', (req,res)=>{
-//   petApi.addOnepet(req.body).then((addOne)=>{
-//     // res.send(addOne)
-//     res.redirect('/listpets')
-//   })
-// })
+petRouter.post('/post', (req,res)=>{
+  petApi.addOnePet(req.body).then((addOne)=>{
+    res.redirect('/listAll')
+  })
+})
 
 // petRouter.put('/:petId', function(req,res){
 //   petApi.updatepetById(req.params.petId, req.body).then((update)=>{
