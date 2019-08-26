@@ -82,11 +82,11 @@ petRouter.post('/post', (req,res)=>{
   })
 })
 
-// petRouter.put('/:petId', function(req,res){
-//   petApi.updatepetById(req.params.petId, req.body).then((update)=>{
-//     res.redirect('/listpets')
-//   });
-// })
+petRouter.put('/:petId', function(req,res){
+  petApi.updatepetById(req.params.petId, req.body).then((update)=>{
+    res.redirect('/listpets')
+  });
+})
 
 // petRouter.delete('/:petId', (req,res) =>{
 //   petApi.deletepetById(req.params.petId).then((deleteThis)=>{
