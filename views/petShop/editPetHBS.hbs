@@ -7,10 +7,17 @@
  <h1> Edit a Pet </h1>
   <label for="name">Pet Name</label>
   <input type="text"name="name" value="{{petFromDb.name}}" />
-
+{{!-- 
   <label for="type">Pet Type</label>
     <input type="text" name="type" value="{{petFromDb.type}}" />
-  
+   --}}
+  <select name="type">
+    <option value="{{petFromDb.type}}" hidden="hidden" selected="selected">{{petFromDb.type}}</option>
+    <option value="Cat" >Cat</option>
+    <option value="Dog">Dog</option>
+    <option value="Fish">Fish</option>
+    <option value="Other">Other</option>
+  </select>
 
   <label for="age">Age in Years</label>
     <input type="number" name="age" value="{{petFromDb.age}}" />

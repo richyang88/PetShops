@@ -10,6 +10,8 @@
  *
  */
 const mongoose = require('./connection.js')
+var Handlebars     = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
 
 /* Step 1 alternative
  *

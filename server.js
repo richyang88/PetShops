@@ -11,6 +11,8 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
+var Handlebars     = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
 
 /* Step 2
  * 
@@ -24,6 +26,8 @@ const { petRouter } = require('./controllers/pets.js')
  *
  * Register middleware...
  */
+
+HandlebarsIntl.registerWith(Handlebars);
 
 /* Step 3.a
  * ...to parse the body of the HTTP requests from a URL encoded string 

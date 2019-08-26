@@ -49,7 +49,8 @@
             <li>
                 <a href ="/sale/{{_id}}">Month: {{month}}</a>
                 <p>Year: {{year}}</p>
-                <p>Sales: {{amount}}</p>
+                {{!-- <p>{{formatNumber price style ="currency" amount ="USD"}} </p> --}}
+                <p>Sales: ${{amount}}</p>
             </li>
             {{/each}}
         </ol>
