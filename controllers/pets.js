@@ -52,31 +52,45 @@ petRouter.get('/listAll', (req, res) => {
   });//passing in pets.js
 })
 
-// petRouter.get('/createPet', (req, res) => {
-//   const createpets = petApi.createPet();
-//   createpets.then((newInDb)=>{
-//     res.send(newInDb);
-//   })
-// })
-
+//to add pets
 petRouter.get('/addPet', (req,res)=>{
   petApi.addOnePet(req.params.petId).then((petInDbObj)=>{
     res.render('./petShop/createPetHBS', {petInDbObj})
   })
 })
 
-// //petID on 59 must match petId on line 60
-petRouter.get('/:petId', (req,res)=>{
-  const petById = petApi.getOnePet(req.params.petId)
-
-  petById.then((petFromDb)=>{
+// get id for Pets
+petRouter.get('/pet/:petId', (req,res)=>{
+  const petId = petApi.getOnePet(req.params.petId)
+   petId.then((petFromDb)=>{
     console.log(petFromDb)
     res.render('petShop/editPetHBS', {petFromDb: petFromDb})
   })
 })
 
+//to add shops
+petRouter.get('/addShop', (req,res)=>{
+  locationApi.addOneLocation(req.params.shopId).then((shopInDbObj)=>{
+    res.render('./shops/createShopHBS', {shopInDbObj})
+  })
+})
+
+// get id for Shops
+petRouter.get('/shop/:petId', (req,res)=>{
+  const petId = petApi.getOnePet(req.params.petId)
+   petId.then((shopFromDb)=>{
+    console.log(shopFromDb)
+    res.render('shops/editShopHBS', {petFromDb: petFromDb})
+  })
+})
 
 petRouter.post('/post', (req,res)=>{
+  petApi.addOnePet(req.body).then((addOne)=>{
+    res.redirect('/listAll')
+  })
+})
+//add one for Shops
+petRouter.post('/shop/post', (req,res)=>{
   petApi.addOnePet(req.body).then((addOne)=>{
     res.redirect('/listAll')
   })
@@ -88,12 +102,12 @@ petRouter.put('/:petId', function(req,res){
   });
 })
 
-// petRouter.delete('/:petId', (req,res) =>{
-//   petApi.deletePetById(req.params.petId).then((deleteThis)=>{
-//     console.log(req.params.petId)
-//     res.redirect('/listAll')
-//   })
-// })
+petRouter.delete('/:petId', (req,res) =>{
+  petApi.deletePetInfoById(req.params.petId).then((deleteThis)=>{
+    console.log(req.params.petId)
+    res.redirect('/listAll')
+  })
+})
 
 
 

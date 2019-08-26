@@ -29,6 +29,7 @@ const petApi = require('./pets.js')
  */
 const ObjectId= mongoose.ObjectId
 const locationSchema = mongoose.Schema({
+    name: String,
     state: String,
     city: String,
     hourStart: Number,
@@ -57,6 +58,7 @@ const locationCollection = mongoose.model('Location', locationSchema)
 
 // function createLocation(){
 //     return locationCollection.create({
+        // name: "Riley's of Peach Tree"
 //         state: "Texas",
 //         city: "Houston",
 //         hourStart: 12,

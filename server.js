@@ -47,7 +47,7 @@ app.use(methodOverride('_method'))
  * use the `./public` directory to host static resources such as css and
  * image files 
  */
-app.use(express.static(__dirname+"/public/"))
+app.use(express.static(__dirname+"/public"))
 
 /* Step 3.b
  *

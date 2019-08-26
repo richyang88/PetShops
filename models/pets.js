@@ -72,7 +72,7 @@ function updatePet(id, petInfo){
 }
 
 function deletePetInfoById(id){
-  return issueCollection.findByIdAndDelete(id)
+  return petCollection.findByIdAndDelete(id)
 }
 
 // function getPetsByShopId(shopId) {

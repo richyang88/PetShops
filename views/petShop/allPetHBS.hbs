@@ -1,5 +1,5 @@
 
-<h1>Riley's Animal World!</h1>
+<h1 id="riley">Riley's Animal World!</h1>
 <div class="containerBg"> 
     <div class="petListCont">
         <a href="/addPet">Click here to Add New Pet!</a>
@@ -7,7 +7,7 @@
         <ol>
             {{#each petInDbObj}}
             <li>
-                <a href ="/{{_id}}">Name: {{name}}</a>
+                <a href ="/pet/{{_id}}">Name: {{name}}</a>
                 <p>Type: {{type}}</p>
                 <p>Age: {{age}} Years</p>
                 <p>Gender: {{gender}}</p>
@@ -23,10 +23,11 @@
         <ol>
             {{#each locationsInDbObj}}
             <li>
-                <a href ="/{{_id}}">State: {{state}}</a>
-                <a href ="/{{_id}}">City: {{city}}</a>
-                <a href ="/{{_id}}">Hour Start: {{hourStart}}</a>
-                <a href ="/{{_id}}">Hour End: {{hourEnd}}</a>
+                <a href ="/shop/{{_id}}">Name: {{name}}</a>
+                <a href ="/shop/{{_id}}">State: {{state}}</a>
+                <p>City: {{city}}</p>
+                <p>Hour Start: {{hourStart}}</p>
+                <p>Hour End: {{hourEnd}}</p>
                 {{!-- <ol> --}}
                 {{!-- Pets Here Today: {{#each pets}} --}}
                     {{!-- <li> test --}}

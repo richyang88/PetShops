@@ -25,6 +25,11 @@
   <input type ="submit" name="submit" value="Edit Pet" />
 </form>
 
+{{!-- Remove Pet from List --}}
+<form method="POST" action ="/{{petFromDb._id}}?_method=DELETE">
+<input type ="submit" name ="deleteBtn" value ="Delete">
+</form>
+
 <form method="GET" action ="/listAll">
   <input type ="submit" name ="homeBtn" value="Home" />
 </form>
