@@ -59,7 +59,7 @@ petRouter.get('/addPet', (req,res)=>{
   })
 })
 
-// get id for Pets
+//get id for Pets
 petRouter.get('/pet/:petId', (req,res)=>{
   const petId = petApi.getOnePet(req.params.petId)
    petId.then((petFromDb)=>{
@@ -91,7 +91,7 @@ petRouter.post('/post', (req,res)=>{
   })
 })
 
-//add one for Shops
+//post for Shops
 petRouter.post('/shop/post', (req,res)=>{
   locationApi.addOneLocation(req.body).then((addOne)=>{
     res.redirect('/listAll')
@@ -112,6 +112,7 @@ petRouter.put('/shop/:shopId', function(req,res){
   });
 })
 
+//delete for pets
 petRouter.delete('/pet/:petId', (req,res) =>{
   petApi.deletePetInfoById(req.params.petId).then((deleteThis)=>{
     console.log(req.params.petId)
@@ -119,7 +120,7 @@ petRouter.delete('/pet/:petId', (req,res) =>{
   })
 })
 
-
+//delete for shops
 petRouter.delete('/shop/:shopId', (req,res) =>{
   locationApi.deleteLocationInfoById(req.params.shopId).then((deleteThis)=>{
     console.log(req.params.shopId)
