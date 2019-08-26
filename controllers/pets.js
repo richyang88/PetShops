@@ -59,11 +59,11 @@ petRouter.get('/listAll', (req, res) => {
 //   })
 // })
 
-// petRouter.get('/addPet', (req,res)=>{
-//   petApi.addOnepet(req.params.petId).then(()=>{
-//     res.render('./pets/petAddHBS', {})
-//   })
-// })
+petRouter.get('/addPet', (req,res)=>{
+  petApi.addOnepet(req.params.petId).then(()=>{
+    res.render('./pets/petAddHBS', {})
+  })
+})
 
 // //petID on 59 must match petId on line 60
 // petRouter.get('/:petId', (req,res)=>{
