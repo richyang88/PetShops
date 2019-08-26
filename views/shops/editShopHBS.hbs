@@ -15,10 +15,13 @@
   <input type="text" name="city" value="{{shopFromDb.city}}" />
 
   <label for="hourStart">Enter Start Hour</label>
-  <input type="number" name="hourStart" value="{{shopFromDb.hourStart}}" />
+  <input type="time" min = "07:00" max = "24:00" name="hourStart" 
+  value="{{shopFromDb.hourStart}}" />
 
-  <label for="hourEdn">Enter Closing Hour</label>
-  <input type="number" name="hourEnd" value="{{shopFromDb.hourEnd}}"  />
+
+  <label for="hourEnd">Enter Closing Hour</label>
+  <input type="time" min = "07:00" max = "24:00" name="hourEnd" 
+  value="{{shopFromDb.hourEnd}}" />
 
 
   <input type ="submit" name="submit" value="Edit Shop" />
