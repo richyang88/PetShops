@@ -32,8 +32,8 @@ const locationSchema = mongoose.Schema({
     name: String,
     state: String,
     city: String,
-    hourStart: Number,
-    hourEnd: Number,
+    hourStart: String,
+    hourEnd: String,
     // shopId: ObjectId
     // pets:[petApi.petSchema]
         // },

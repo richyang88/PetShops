@@ -15,11 +15,13 @@
   <label for="city">City</label>
   <input type="text" name="city" />
 
-  <label for="hourStart">Enter Start Hour</label>
-  <input type="number" name="hourStart" placeholder="10"/>
+  <label for="hourStart">Enter Start Time</label>
+  <input type="time" min = "07:00" max = "24:00" 
+  name="hourStart" />
 
-  <label for="hourEdn">Enter Closing Hour</label>
-  <input type="number" name="hourEnd" placeholder="6" />
+  <label for="hourEnd">Enter Closing Time</label>
+  <input type="time" min = "07:00" max = "24:00" 
+  name="hourEnd" />
 
 
   <input type ="submit" name="submit" value="Add Shop" />

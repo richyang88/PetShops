@@ -23,10 +23,18 @@
     <input type="number" name="age" value="{{petFromDb.age}}" />
 
   <label for="gender">Gender</label>
-    <input type="text" name="gender" value="{{petFromDb.gender}}" />
+    <select name="gender">
+      <option value="{{petFromDb.gender}}" hidden="hidden" selected="selected">{{petFromDb.gender}}</option>
+      <option value="Female" >Female</option>
+      <option value="Male">Male</option>
+    </select>
 
   <label for="status">Status</label>
-   <input type="text" name="status" value="{{petFromDb.status}}" />
+    <select name="status">
+      <option value="{{petFromDb.status}}" hidden="hidden" selected="selected">{{petFromDb.status}}</option>
+      <option value="Adopted" >Adopted</option>
+      <option value="Available">Available</option>
+    </select>
 
 
   <input type ="submit" name="submit" value="Edit Pet" />
