@@ -27,12 +27,13 @@ const petApi = require('./pets.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-
-const locationSchema = new mongoose.Schema({
+const ObjectId= mongoose.ObjectId
+const locationSchema = mongoose.Schema({
     state: String,
     city: String,
     hourStart: Number,
     hourEnd: Number,
+    shopId: ObjectId
     // pets:[petApi.petSchema]
         // },
         // {timestamps: {
@@ -54,17 +55,18 @@ const locationSchema = new mongoose.Schema({
  */
 const locationCollection = mongoose.model('Location', locationSchema)
 
-// function createLocation(){
-//     return locationCollection.create({
-//         state: "Texas",
-//         city: "Houston",
-//         hourStart: 12,
-//         hourEnd: 9,
-//         // pets:[petApi.petSchema]
-//     }); 
-// }
+function createLocation(){
+    return locationCollection.create({
+        state: "Texas",
+        city: "Houston",
+        hourStart: 12,
+        hourEnd: 9,
+        // shopId: mongoose.Types.ObjectId()
+        // pets:[petApi.petSchema]
+    }); 
+}
 
-// createLocation();
+createLocation();
 
 function getAllLocations() {
   return locationCollection.find()
@@ -92,7 +94,7 @@ function deleteLocationInfoById(id){
  * object
  */
 module.exports = {
-//   createLocation,
+  createLocation,
   getAllLocations,
   getOneLocation,
   addOneLocation,

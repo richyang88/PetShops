@@ -75,6 +75,10 @@ function deletePetInfoById(id){
   return issueCollection.findByIdAndDelete(id)
 }
 
+// function getPetsByShopId(shopId) {
+//   return petCollection.find({ shopId: shopId })
+// }
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -87,5 +91,6 @@ module.exports = {
   addOnePet,
   updatePet,
   deletePetInfoById,
-  petSchema
+  petSchema,
+  // getPetsByShopId
 }
