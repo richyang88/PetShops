@@ -79,7 +79,7 @@ function getOneLocation(id){
 }
 
 function addOneLocation(newLocation){
-  return locationCollection.create(newPet)
+  return locationCollection.create(newLocation)
 }
 
 function updateLocation(id, locationInfo){

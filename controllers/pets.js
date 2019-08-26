@@ -76,35 +76,53 @@ petRouter.get('/addShop', (req,res)=>{
 })
 
 // get id for Shops
-petRouter.get('/shop/:petId', (req,res)=>{
-  const petId = petApi.getOnePet(req.params.petId)
-   petId.then((shopFromDb)=>{
+petRouter.get('/shop/:shopId', (req,res)=>{
+  const shopId = locationApi.getOneLocation(req.params.shopId)
+   shopId.then((shopFromDb)=>{
     console.log(shopFromDb)
-    res.render('shops/editShopHBS', {petFromDb: petFromDb})
+    res.render('shops/editShopHBS', {shopFromDb: shopFromDb})
   })
 })
 
+//post for pets
 petRouter.post('/post', (req,res)=>{
   petApi.addOnePet(req.body).then((addOne)=>{
     res.redirect('/listAll')
   })
 })
+
 //add one for Shops
 petRouter.post('/shop/post', (req,res)=>{
-  petApi.addOnePet(req.body).then((addOne)=>{
+  locationApi.addOneLocation(req.body).then((addOne)=>{
     res.redirect('/listAll')
   })
 })
 
+//update for pets
 petRouter.put('/:petId', function(req,res){
   petApi.updatePet(req.params.petId, req.body).then((update)=>{
     res.redirect('/listAll')
   });
 })
 
-petRouter.delete('/:petId', (req,res) =>{
+//update for shop
+petRouter.put('/shop/:shopId', function(req,res){
+  locationApi.updateLocation(req.params.shopId, req.body).then((update)=>{
+    res.redirect('/listAll')
+  });
+})
+
+petRouter.delete('/pet/:petId', (req,res) =>{
   petApi.deletePetInfoById(req.params.petId).then((deleteThis)=>{
     console.log(req.params.petId)
+    res.redirect('/listAll')
+  })
+})
+
+
+petRouter.delete('/shop/:shopId', (req,res) =>{
+  locationApi.deleteLocationInfoById(req.params.shopId).then((deleteThis)=>{
+    console.log(req.params.shopId)
     res.redirect('/listAll')
   })
 })
