@@ -84,6 +84,25 @@ petRouter.get('/shop/:shopId', (req,res)=>{
   })
 })
 
+
+//to add Sales
+petRouter.get('/addSale', (req,res)=>{
+  salesApi.addOneSale(req.params.saleId).then((saleInDbObj)=>{
+    res.render('./sales/createSaleHBS', {saleInDbObj})
+  })
+})
+
+// get id for Sales
+petRouter.get('/sale/:saleId', (req,res)=>{
+  const saleId = salesApi.getOneSale(req.params.saleId)
+   saleId.then((saleFromDb)=>{
+    // console.log(shopFromDb)
+    res.render('sales/editSaleHBS', {saleFromDb: saleFromDb})
+  })
+})
+
+
+
 //post for pets
 petRouter.post('/post', (req,res)=>{
   petApi.addOnePet(req.body).then((addOne)=>{

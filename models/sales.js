@@ -42,13 +42,13 @@ const salesSchema = new mongoose.Schema({
  */
 const salesCollection = mongoose.model('Sales', salesSchema)
 
-function createSales(){
-    return salesCollection.create({
-    month: "August",
-    year: 2019,
-    amount: 2900
-    }); 
-}
+// function createSales(){
+//     return salesCollection.create({
+//     month: "August",
+//     year: 2019,
+//     amount: 2900
+//     }); 
+// }
 
 function getAllSales() {
   return salesCollection.find()
@@ -76,7 +76,7 @@ function deleteSaleInfoById(id){
  * object
  */
 module.exports = {
-  createSales,
+//   createSales,
   getAllSales,
   getOneSale,
   addOneSale,
