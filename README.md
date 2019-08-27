@@ -14,4 +14,11 @@ or copy and paste link (https://github.com/richyang88/PetShops/projects/1)
 <!-- * bullet point -->
 
 <!-- ![alt text]( file path here "WireFrame") -->
-![alt text](./public/images/wireframe.png"ERD")
+WireFrame Home:
+![alt text](./public/images/wireframeHome.jpg"ERD")
+
+WireFrame Edit/New
+![alt text](./public/images/wireframeEdit.jpg"ERD")
+
+ERD
+![alt text](./public/images/erd.png"ERD")
