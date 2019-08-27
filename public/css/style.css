@@ -13,21 +13,41 @@ body{
 .petListCont{
     position: relative;
     background-color: darkred;
+    background-image: url("/images/pets.jpg");
     width: 33vw;
     padding: 0;
     margin: 0;
+}
+
+.petListItems{
+    background-color: rgba(150,150,150, .6);
+    width: 40%;
 }
 
 .shopListCont{
     background-color:darkgreen;
+    background-image: url("/images/petShopBg.jpg");
+    background-position: center;
+    /* background-size: cover; */
     width: 33vw;
     padding: 0;
     margin: 0;
 }
 
+.shopListItems{
+    background-color: rgba(150,150,150, .6);
+    width: 40%;
+}
+
 .saleListCont{
     background-color:purple;
+    background-image: url("/images/petSales.jpg");
     width: 33vw;
     padding: 0;
     margin: 0;
+}
+
+.saleListItems{
+    background-color: rgba(150,150,150, .6);
+    width: 40%;
 }
