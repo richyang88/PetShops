@@ -8,21 +8,9 @@ Welcome to Riley's Amazing Animal World Petshop. This app was designed for the g
 [**Project Board:**](https://github.com/richyang88/PetShops/projects/1)
 
 
+[**bold**](https://murmuring-island-31763.herokuapp.com/listAll)<---Link--->
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `npm install express hbs method-override`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+<!-- * bullet point -->
 
-# Testing Your Api
-
-Run
-    ./testWebAPI -h
-for instructions on how to test your web API. In short this is a BASH script
-wrapper around the `curl` command which is used for making http requests.
+<!-- ![alt text]( file path here "WireFrame") -->
+![alt text](./public/images/petShopWireFrame.png "ERD")
