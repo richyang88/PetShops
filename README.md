@@ -1,22 +1,12 @@
-# mehn-template-project
+# Riley's Animal World
 
-# Setup A New Project From This Template
+Welcome to Riley's Amazing Animal World Petshop. This app was designed for the great Riley himeself (you). Follow the link to the site to be able to add/edit/ and keep track of your pets, shop locations, and sales.
 
-If you are starting a new project do the following:
 
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `node ./server.js`
-1. In a new terminal run `curl localhost:3000/helloworld`. You should see
-   `hello world!` as the output. From there your server template works!
-1. see the `controllers`, `models`, and `views` directories' `readme.md` files
+[**Website:**] (https://murmuring-island-31763.herokuapp.com/listAll)
 
-# Setup A New Project Without This Template
+[**Project Board:**](https://github.com/richyang88/PetShops/projects/1)
 
-If you want to start a project without using this template directory do the
-following:
 
 
 1. `mkdir <project-name>`
