@@ -2,12 +2,14 @@
 <h1 id="riley">Riley's Animal World!</h1>
 <div class="containerBg"> 
     <div class="petListCont">
-        <a href="/addPet">Click here to Add New Pet!</a>
-        <div> Pets</div>
+        <a class="linkHead" href="/addPet">Click here to Add New Pet!</a>
+        <h2> Pets</h2>
         <ol >
             {{#each petInDbObj}}
             <li class="petListItems">
-                <a href ="/pet/{{_id}}">Name: {{name}}</a>
+                <p>Name: {{name}} 
+                    <a href ="/pet/{{_id}}">Edit Pet</a>
+                </p>                
                 <p>Type: {{type}}</p>
                 <p>Age: {{age}} Years</p>
                 <p>Gender: {{gender}}</p>
@@ -18,12 +20,14 @@
     </div>
 
     <div class="shopListCont">
-        <a href="/addShop">Click here to Add New Stores!</a>
-        <div> Shops</div> 
+        <a class="linkHead" href="/addShop">Click here to Add New Stores!</a>
+        <h2> Shops</h2> 
         <ol>
             {{#each locationsInDbObj}}
             <li class="shopListItems">
-                <a href ="/shop/{{_id}}">Name: {{name}}</a>
+                <p>Name: {{name}}
+                    <a href ="/shop/{{_id}}">Edit Shop</a>
+                </p>
                 <p>State: {{state}}</p>
                 <p>City: {{city}}</p>
                 <p>Start Time: {{hourStart}}</p>
@@ -34,12 +38,14 @@
     </div>
 
     <div class="saleListCont">
-        <a href="/addSale">Click here to Add New Sales</a>
-        <div> Sales</div>
-        <ol class="saleListItems">
+        <a class="linkHead" href="/addSale">Click here to Add New Sales</a>
+        <h2> Sales</h2>
+        <ol>
             {{#each salesInDbObj}}
-            <li>
-                <a href ="/sale/{{_id}}">Month: {{month}}</a>
+            <li class="saleListItems">
+                <p>Month: {{month}}
+                    <a href ="/sale/{{_id}}">Edit Sale</a>
+                </p>                
                 <p>Year: {{year}}</p>
                 {{!-- <p>{{formatNumber price style ="currency" amount ="USD"}} </p> --}}
                 <p>Sales: ${{amount}}</p>

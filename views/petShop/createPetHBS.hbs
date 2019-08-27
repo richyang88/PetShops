@@ -4,39 +4,43 @@
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
-  <h1>Add a new Pet</h1>
-  <label for="name">Pet Name</label>
-  <input type="text"placeholder="name" name="name" />
+  <h1 class="addPetH1">Add a new Pet</h1>
+  <div class="createPetCont">
+    <div class="createPetBg">
+      <label class ="petPage" for="name">Pet Name</label>
+      <input type="text"placeholder="name" name="name" />
 
-  <label for="type">Pet Type</label>
-    <select name="type">
-      <option value="Cat" selected="selected">Cat</option>
-      <option value="Dog">Dog</option>
-      <option value="Fish">Fish</option>
-      <option value="Other">Other</option>
-    </select>
-  
+      <label class ="petTypeLabel" for="type">Pet Type</label>
+        <select name="type">
+          <option value="Cat" selected="selected">Cat</option>
+          <option value="Dog">Dog</option>
+          <option value="Fish">Fish</option>
+          <option value="Other">Other</option>
+        </select>
+      
 
-  <label for="age">Age in Years</label>
-  <input type="number" name="age" />
+      <label for="age">Age in Years</label>
+      <input type="number" name="age" />
 
-  <label for="gender">Gender</label>
-  <select name="gender">
-    <option value="Female" selected="selected">Female</option>
-    <option value="Male">Male</option>
-  </select>
+      <label for="gender">Gender</label>
+      <select name="gender">
+        <option value="Female" selected="selected">Female</option>
+        <option value="Male">Male</option>
+      </select>
 
-  <label for="status">Status</label>
-    <select name="status">
-    <option value="Adopted" selected="selected">Adopted</option>
-    <option value="Available">Available</option>
-  </select>
-
-
-  <input type ="submit" name="submit" value="Add Pet" />
-</form>
+      <label for="status">Status</label>
+        <select name="status">
+        <option value="Adopted" selected="selected">Adopted</option>
+        <option value="Available">Available</option>
+      </select>
 
 
-<form method="GET" action ="/listAll">
-  <input type ="submit" name ="homeBtn" value="Home" />
-</form>
+      <input type ="submit" name="submit" value="Add Pet" />
+    </form>
+
+
+    <form method="GET" action ="/listAll">
+      <input type ="submit" name ="homeBtn" value="Home" />
+    </form>
+  </div>
+</div>

@@ -8,26 +8,44 @@ body{
 .containerBg{
     display:flex;
     justify-content: space-around;
+    text-align: center;
+}
+
+.linkHead{
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+
+}
+
+h2{
+    text-align: center;
+    color: red;
 }
 
 .petListCont{
     position: relative;
     background-color: darkred;
     background-image: url("/images/pets.jpg");
+    background-attachment: fixed;
     width: 33vw;
-    padding: 0;
-    margin: 0;
 }
 
 .petListItems{
-    background-color: rgba(150,150,150, .6);
-    width: 40%;
+    background-color: rgba(250,250,250, .9);
+    /* border: solid; */
+    width: auto;
+    text-align: left;
+    font-size: 20px;
+    
 }
 
 .shopListCont{
     background-color:darkgreen;
     background-image: url("/images/petShopBg.jpg");
     background-position: center;
+    background-attachment: fixed;
     /* background-size: cover; */
     width: 33vw;
     padding: 0;
@@ -35,19 +53,74 @@ body{
 }
 
 .shopListItems{
-    background-color: rgba(150,150,150, .6);
-    width: 40%;
+    background-color: rgba(250,250,250, .9);
+    background-color: rgba(250,250,250, .9);
+    width: auto;
+    text-align: left;
+    font-size: 20px;
+    
+    color: greenyellow;
+    color: black;
 }
 
 .saleListCont{
     background-color:purple;
     background-image: url("/images/petSales.jpg");
+    background-attachment: fixed;
     width: 33vw;
     padding: 0;
     margin: 0;
 }
 
 .saleListItems{
-    background-color: rgba(150,150,150, .6);
-    width: 40%;
+    background-color: rgba(243, 147, 61, .7);
+    background-color: rgba(250,250,250, .9);
+    width: auto;
+    text-align: left;
+    font-size: 20px;
+    color: black;
+}
+
+ol{
+    list-style: none;
+}
+
+/* editing createPet HBS */
+.petH1{
+    text-align: center;
+}
+.createPetCont{
+    display: flex;
+    justify-content: center;
+    background-color: lightgreen;
+    border: solid;
+}
+.createPetBg{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 500px;
+    border: solid;
+    font-size: 20px;
+    background-image: url("/images/createPet.jpg");
+    background-position: center;
+    background-size: cover;
+    
+}
+.petPage{
+    margin-top: 50px;
+    text-align: center;
+    color:red;
+}
+
+#createSaleBg{
+    background-image: url("/images/petSalesEdit.jpg")
+}
+
+#createShopBg{
+    background-image: url("/images/shopPetEdit.jpg")
 }

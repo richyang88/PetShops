@@ -4,35 +4,39 @@
     Template for creating input form for a string object key called stringMember
     NOTE: for numeric input fields use `type="number"`
   --->
- <h1>Edit Shop</h1>
-  <label for="name">Shop Name</label>
-  <input type="text"name="name" value="{{shopFromDb.name}}"  />
+ <h1 class="petH1">Edit Shop</h1>
+<div class="createSaletCont createPetCont">
+    <div class="createPetBg" id= "createShopBg">
+        <label for="name">Shop Name</label>
+        <input type="text"name="name" value="{{shopFromDb.name}}"  />
 
-  <label for="state">State</label>
-    <input type="text" name="state" value="{{shopFromDb.state}}" />
-      
-  <label for="city">City</label>
-  <input type="text" name="city" value="{{shopFromDb.city}}" />
+        <label for="state">State</label>
+            <input type="text" name="state" value="{{shopFromDb.state}}" />
+            
+        <label for="city">City</label>
+        <input type="text" name="city" value="{{shopFromDb.city}}" />
 
-  <label for="hourStart">Enter Start Hour</label>
-  <input type="time" min = "07:00" max = "24:00" name="hourStart" 
-  value="{{shopFromDb.hourStart}}" />
-
-
-  <label for="hourEnd">Enter Closing Hour</label>
-  <input type="time" min = "07:00" max = "24:00" name="hourEnd" 
-  value="{{shopFromDb.hourEnd}}" />
+        <label for="hourStart">Enter Start Hour</label>
+        <input type="time" min = "07:00" max = "24:00" name="hourStart" 
+        value="{{shopFromDb.hourStart}}" />
 
 
-  <input type ="submit" name="submit" value="Edit Shop" />
-</form>
+        <label for="hourEnd">Enter Closing Hour</label>
+        <input type="time" min = "07:00" max = "24:00" name="hourEnd" 
+        value="{{shopFromDb.hourEnd}}" />
 
 
-{{!-- Remove Shop from List --}}
-<form method="POST" action ="/shop/{{shopFromDb._id}}?_method=DELETE">
-<input type ="submit" name ="deleteBtn" value ="Delete">
-</form>
+        <input type ="submit" name="submit" value="Edit Shop" />
+        </form>
 
-<form method="GET" action ="/listAll">
-  <input type ="submit" name ="homeBtn" value="Home" />
-</form>
+
+        {{!-- Remove Shop from List --}}
+        <form method="POST" action ="/shop/{{shopFromDb._id}}?_method=DELETE">
+        <input type ="submit" name ="deleteBtn" value ="Delete">
+        </form>
+
+        <form method="GET" action ="/listAll">
+        <input type ="submit" name ="homeBtn" value="Home" />
+        </form>
+    </div>
+</div>
