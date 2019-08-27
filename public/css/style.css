@@ -1,0 +1,33 @@
+body{
+    margin:0;
+    padding: 0;
+}
+#riley{
+    text-align: center;
+}
+.containerBg{
+    display:flex;
+    justify-content: space-around;
+}
+
+.petListCont{
+    position: relative;
+    background-color: darkred;
+    width: 33vw;
+    padding: 0;
+    margin: 0;
+}
+
+.shopListCont{
+    background-color:darkgreen;
+    width: 33vw;
+    padding: 0;
+    margin: 0;
+}
+
+.saleListCont{
+    background-color:purple;
+    width: 33vw;
+    padding: 0;
+    margin: 0;
+}
